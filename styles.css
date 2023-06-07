@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* TITULO */
+.titulo-principal {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #037ef3;
+    color: #fff;
+    padding: 20px 0;
+}
+
+/* INTRODUCCION */
+.contenedor-intro{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.cont-intro-parrafo {
+    text-align: justify;
+    width: 60%;
+}
+
+.introduccion {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+/* FORMULARIO DE USUARIO */
+.formulario {
+    width: 40%;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  
+  input[type="number"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    width: 200px;
+  }
+  
+  input[type="number"]:focus {
+    outline: none;
+    border-color: #037ef3;
+  }
+
+  /* FILTRO DEPARTAMENTO */
+  /* Estilos para el select */
+#filtro-departamento {
+    margin-top: 8px;
+    background-color: #F1F1F1;
+    color: #333333;
+    font-size: 16px;
+    width: 200px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #filtro-departamento:hover {
+    background-color: #E5E5E5;
+  }
+  
+  .subtitulo-graficas{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin-left: 20px;
+  }
+
+  /* CONTENEDOR GRAFICAS */
+  .contenedor-graficas {
+    max-width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* GRAFICAS */
+  .positivos-departemento {
+    width: 950px;
+    height: auto;
+  }
+
+  .departamento-mayor-casos{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+
+  .distribucion-sexo{
+    width: 600px;
+  }
+
+  .separador-distribucion{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .distribucion-edad{
+    width: 950px;
+  }
+  .edad-mayor-casos{
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+
+  /* MEDIA QUERIES */
+  @media screen and (max-width: 400px) {
+    .contenedor-intro {
+        flex-direction: column;
+    }
+
+    .cont-intro-parrafo,
+    .formulario {
+        width: 100%;
+    }
+
+    .formulario{
+        margin-bottom: 20px;
+    }
+}

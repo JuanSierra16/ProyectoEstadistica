@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 en Colombia</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="titulo-principal">Casos Positivos de COVID-19 en Colombia</h1>
+    <div class="contenedor-intro">
+        <div class="cont-intro-parrafo">
+            <p class="introduccion">
+                Bienvenidos a nuestro sitio web dedicado a proporcionar información actualizada sobre los datos del COVID-19 en Colombia. Aquí podrás encontrar estadísticas, gráficos y análisis relacionados con la situación de la pandemia en nuestro país. Nuestro objetivo es brindarte información confiable y relevante para que estés informado sobre el avance del virus y sus impactos en nuestra sociedad. Explora nuestros recursos y descubre cómo el COVID-19 ha afectado a Colombia en términos de casos positivos, recuperaciones, fallecimientos y más. ¡Juntos podemos enfrentar esta crisis y mantenernos seguros!<br>
+                <i>Para más información los datos fueron obtenidos <a href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia/gt2j-8ykr">aquí</a></i>
+            </p>
+        </div>
+        <form class="formulario" onsubmit="event.preventDefault(); submitForm();">
+            <label for="numero-datos">Ingrese el número de datos que desea analizar:</label>
+            <input type="number" id="numero-datos" name="numero-datos" min="1" max="100000">
+            <select id="filtro-departamento" name="filtro-departamento" style="margin-top: 8px;"></select>
+            <button id="btn-enviar" type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 8px;">Obtener datos</button>
+        </form>        
+    </div>
+    <h3 class="subtitulo-graficas" id="subtitulo-graficas">A continuación veremos las gráficas según los datos ingresados: </h3>
+    <section class="contenedor-graficas">
+        <div class="positivos-departemento">
+            <canvas id="myChart"></canvas>
+            <p class="departamento-mayor-casos" id="departamento-mayor-casos"></p>
+            <hr style="border-color: #ccc; border-width: 2px; border-style: solid; margin: 20px 0;">
+        </div>
+        <div class="distribucion-sexo">
+            <h4 style="text-align: center; font-family: 'Roboto',sans-serif; margin: 5px 0;">Distribución de casos positivos según el sexo</h4>
+            <div class="separador-distribucion">
+                <div class="canvas" style="width: 50%;"><canvas id="myChart2" ></canvas></div>
+                <p class="dist-sexo" style="width: 50%; padding: 40px; font-family: 'Roboto', sans-serif;
+                font-weight: 400;" id="dist-sexo"></p>   
+            </div>
+            <hr style="border-color: #ccc; border-width: 2px; border-style: solid; margin: 20px 0;">
+        </div>
+        <div class="distribucion-edad">
+            <canvas id="myChart3"></canvas>
+            <p class="edad-mayor-casos" id="edad-mayor-casos"></p>
+            <hr style="border-color: #ccc; border-width: 2px; border-style: solid; margin: 24px 0;">
+        </div>
+        <div class="distribucion-estado" style="width: 600px;">
+            <h4 style="text-align: center; font-family: 'Roboto',sans-serif; margin: 5px 0;">Distribución de casos positivos según el estado</h4>
+            <div class="separador-distribucion">
+                <div class="canvas" style="width: 50%;"><canvas id="myChart4" ></canvas></div>
+                <p class="estado" style="width: 50%; padding: 40px; font-family: 'Roboto', sans-serif;
+                font-weight: 400;" id="estado"></p>  
+            </div>
+            <hr style="border-color: #ccc; border-width: 2px; border-style: solid; margin: 24px 0;">
+        </div>
+        <div class="dist-tipo-contagio" style="width: 600px;">
+            <h4 style="text-align: center; font-family: 'Roboto',sans-serif; margin: 5px 0;">Distribución de casos positivos según el contagio</h4>
+            <div class="separador-distribucion">
+                <div class="canvas" style="width: 50%;"><canvas id="myChart5" ></canvas></div>
+                <p class="contagio" style="width: 50%; padding: 40px; font-family: 'Roboto', sans-serif;
+                font-weight: 400;" id="contagio"></p>  
+            </div>
+            <hr style="border-color: #ccc; border-width: 2px; border-style: solid; margin: 24px 0;">
+        </div>
+    </section>
+    
+
+    <script src="scritpt.js"></script>
+</body>
+</html>
